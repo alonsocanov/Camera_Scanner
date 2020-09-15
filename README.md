@@ -31,7 +31,7 @@ python3 camera_scanner.py --image data/img_1.jpeg
 
 ## Output samples
 The following image shows the input image, the document edge detector and finally the image wraping on the zone of interest.  
-[alt text](https://github.com/alonsocanov/Camera_Scanner/blob/master/outputs/example.jpeg | width=100)
+![test](https://github.com/alonsocanov/Camera_Scanner/blob/master/outputs/example.jpeg | width=100)
 
 ## References
 Took inspiration from this [post](https://www.pyimagesearch.com/2014/09/01/build-kick-ass-mobile-document-scanner-just-5-minutes/).
