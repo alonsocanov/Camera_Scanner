@@ -30,8 +30,13 @@ python3 camera_scanner.py --image data/img_1.jpeg
 - argparse
 
 ## Output samples
-The following image shows the input image, the document edge detector and finally the image wraping on the zone of interest.  
+- The following image shows the input image, the document edge detector and finally the image wraping on the zone of interest.  
 ![alt text](https://github.com/alonsocanov/Camera_Scanner/blob/master/outputs/example.jpeg "Image input and output")
+
+- The following image shows the use of webcam for the document detection and finally the frame taken wraping is shown in the las image.  
+![alt text](https://github.com/alonsocanov/Camera_Scanner/blob/master/outputs/video.gif "Webcam feed")
+![alt text](https://github.com/alonsocanov/Camera_Scanner/blob/master/outputs/video_output.jpeg "Frame warping")
+
 
 ## References
 Took inspiration from this [post](https://www.pyimagesearch.com/2014/09/01/build-kick-ass-mobile-document-scanner-just-5-minutes/).
