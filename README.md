@@ -4,7 +4,7 @@ This repository is a classic document scanner using a provided image or a webcam
 
 ## Run code
 
-First activate the virtual environment if you use one, make sure that you have required libraries and run one of the the folowing commands:  
+First activate the virtual environment if you use one, make sure that you have required libraries and run one of the the following commands:  
 
 1) Using the webcam
 ```bash
@@ -15,7 +15,7 @@ python3 path/to/directory/camera_scanner.py
 ```bash
 python3 path/to/directory/camera_scanner.py --image path/to/image/img.jpg
 ```
-If you downloaded full repossitory and you are currently in directory run:  
+If you downloaded full repository and you are currently in directory run:  
 ```bash
 python3 camera_scanner.py --image data/img_1.jpeg
 ```
@@ -30,10 +30,10 @@ python3 camera_scanner.py --image data/img_1.jpeg
 - argparse
 
 ## Output samples
-- The following image shows the input image, the document edge detector and finally the image wraping on the zone of interest.  
+- The following image shows the input image, the document edge detector and finally the image warping on the zone of interest.  
 ![alt text](https://github.com/alonsocanov/Camera_Scanner/blob/master/outputs/example.jpeg "Image input and output")
 
-- The following image shows the use of webcam for the document detection and finally the frame taken wraping is shown in the las image.  
+- The following image shows the use of webcam for the document detection and finally the frame taken warping is shown in the las image.  
 ![alt text](https://github.com/alonsocanov/Camera_Scanner/blob/master/outputs/video.gif "Webcam feed")
 ![alt text](https://github.com/alonsocanov/Camera_Scanner/blob/master/outputs/video_output.jpeg "Frame warping")
 
