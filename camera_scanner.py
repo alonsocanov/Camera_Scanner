@@ -24,6 +24,7 @@ def show(img: np.ndarray):
     cv2.moveWindow(win_name, 20, 20)
     img_show, _ = resize(img)
     cv2.imshow(win_name, img_show)
+    # cv2.imwrite('example_2.jpeg', img_show)
     cv2.waitKey(0)
     cv2.destroyWindow(win_name)
 
@@ -129,6 +130,9 @@ def isWebcam():
     # resise image and the resize factor
     img_res, factor = resize(img)
     h_res, w_res = img_res.shape[:2]
+    # save video
+    # out = cv2.VideoWriter('out.avi', cv2.VideoWriter_fourcc('M', 'J', 'P', 'G'), 24, (w_res, h_res))
+
     # maximum corners when no document is detected
     max_h = int(h_res * .98)
     max_w = int(w_res * .8)
@@ -201,6 +205,8 @@ def isWebcam():
                 stable = 0
             # draw contours depending in the color
             cv2.drawContours(img_res, [src_pts], -1, color, 5)
+        # save video feed
+        # out.write(img_res)
         # show current frame
         cv2.imshow(win_name, img_res)
         # check if key q was pressed to quit
