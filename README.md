@@ -15,7 +15,7 @@ python3 path/to/directory/camera_scanner.py
 ```bash
 python3 path/to/directory/camera_scanner.py --image path/to/image/img.jpg
 ```
-If you downloaded full repossitory and you are currently  repository run:  
+If you downloaded full repossitory and you are currently in directory run:  
 ```bash
 python3 camera_scanner.py --image data/img_1.jpeg
 ```
