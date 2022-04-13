@@ -1,8 +1,5 @@
-import numpy as np
 import argparse
-import sys
 import image as im
-import pytesseract
 
 
 def main():
@@ -13,6 +10,7 @@ def main():
     # if image argument has input
     key_q = False
     win_name = 'Frame'
+    path = 'warped.jpg'
     while not key_q:
         if args.image:
             file = im.availableFiles(args.image)
@@ -22,15 +20,19 @@ def main():
             img, corners = im.isWebcam(win_name)
         h, w = img.shape[:2]
         # arange corner points
-        corners = im.arangePts(corners, (h, w))
+        corners = im.arangePts(corners, (w, h))
         # ratio between height and width of found document
         ratio = im.scannedRatio(corners)
         # destination point for warpping
-        dst = im.setDestinationPts((h / ratio, h))
+        dst, dim = im.setDestinationPts(ratio, (w, h))
         # warp image
-        warp = im.warpImg(img, corners, dst, (h / ratio, h))
+        warp = im.warpImg(img, corners, dst, dim)
+
+        warp = im.textDetection(warp)
+        # im.saveImg(warp, path)
         # show image
         im.show(warp, win_name)
+
         im.check_any_key()
 
     im.destroyAllWindows()
