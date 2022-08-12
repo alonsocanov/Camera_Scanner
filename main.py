@@ -29,11 +29,12 @@ def main():
         warp = im.warpImg(img, corners, dst, dim)
 
         warp = im.textDetection(warp)
-        # im.saveImg(warp, path)
+        im.saveImg(warp, path)
         # show image
         im.show(warp, win_name)
 
         im.check_any_key()
+        break
 
     im.destroyAllWindows()
 
