@@ -164,8 +164,8 @@ def isWebcam(win_name='Frame'):
     img_res, factor = resize(img)
     h_res, w_res = img_res.shape[:2]
     # save video
-    # out = cv2.VideoWriter('video.avi', cv2.VideoWriter_fourcc(
-    #     'M', 'J', 'P', 'G'), 24, (w_res, h_res))
+    out = cv2.VideoWriter('video.avi', cv2.VideoWriter_fourcc(
+        'M', 'J', 'P', 'G'), 24, (w_res, h_res))
 
     # maximum corners when no document is detected
     max_h = int(h_res * .98)
@@ -247,7 +247,7 @@ def isWebcam(win_name='Frame'):
             cv2.drawContours(img_res, [src_pts], -1, color, 5)
             cv2.circle(img_res, (30, 30), 5, (255, 0, 0), 6)
         # save video feed
-        # out.write(img_res)
+        out.write(img_res)
         # show current frame
         cv2.imshow(win_name, img_res)
 
@@ -271,7 +271,7 @@ def textDetection(img):
         img, output_type=pytesseract.Output.DICT)
     for i in range(0, len(results["text"])):
         conf = float(results["conf"][i])
-        if conf > 80.0:
+        if conf > 75.0:
             x = results["left"][i]
             y = results["top"][i]
             w = results["width"][i]
@@ -283,7 +283,7 @@ def textDetection(img):
             text = results["text"][i]
 
             cv2.putText(img, text, (x, y - 10),
-                        cv2.FONT_HERSHEY_SIMPLEX, 1.2, (0, 255, 255), 3)
+                        cv2.FONT_HERSHEY_SIMPLEX, 1.2, (255, 0, 0), 3)
     return img
 
 
